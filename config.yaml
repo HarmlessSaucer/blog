@@ -2,7 +2,7 @@ baseurl: https://balharrie.uk
 languageCode: en-gb
 theme: hugo-theme-stack
 paginate: 5
-title: Example Site
+title: balharrie.uk
 languages:
     en:
         languageName: English
