@@ -11,8 +11,15 @@ menu:
             icon: user
 ---
 
-Hey! I'm Graham, an IT Profesaaasional based in Berkshire, UK.
+
+![](avataaars_small.png)
+
+&nbsp;
+
+👋 Hey! I'm **Graham**, an IT Professional based in Berkshire, U.K. 🇬🇧
 
 I'm passionate about home automation, Linux, Open Source software and self-hosting.  I also love DIY, electronics and making music.
 
-I make notes for myself in Markdown, so I figured I'd share the odd blog post about things I'm doing, mainly so I can look it up later when I forget!  If it helps anyone else out, bonus!
+I make notes for myself in Markdown, so I figured I'd share the odd blog post about things I'm doing, mainly so I can look it up later when I forget.  If it helps anyone else out, bonus!
+
+&nbsp;
