@@ -18,13 +18,19 @@ categories:
 
 I've been using Sketchup on and off for a good few years now to design some of the projects at our house, including the last shed/workshop we built.  Sketchup has had a tumultuous past however and I _really_ dislike the new web-based version.
 
-I still have a copy of the 2017 version stored on my NAS, but since my move to Linux as my daily driver I haven't been able to utilise it.
+I still have a copy of the 2017 version stored on my NAS, but since my move to Linux as my daily driver OS on my PC, I haven't been able to utilise it.
 
+So I decided to take some time to work out how to get it working using Wine.
 
-**Host OS:** Pop_OS! 22.04
+&nbsp;
+
+### System Info
+
+**Host OS:** `Pop_OS! 22.04`
 
 **Sketchup Version:** `sketchupmake-2017-2-2555-90782-en-x64.exe`
 
+&nbsp;
 
 ## Basic Steps
 
@@ -34,12 +40,16 @@ I still have a copy of the 2017 version stored on my NAS, but since my move to L
 - Install Wine and Winetricks:
 `sudo apt install wine winetricks`
 
+&nbsp;
+
 ## Configure Wine
 
 - Run winecfg:
 `winecfg`
 
 - Switch the Windows version to `Windows 7`
+
+&nbsp;
 
 ## Install DotNET452 and corefonts etc
 
@@ -53,16 +63,24 @@ env WINEPREFIX=$HOME/winedotnet wineboot --ini
 env WINEPREFIX=$HOME/winedotnet winetricks --force dotnet452 corefonts
 ```
 
+&nbsp;
+
 ## Install Sketchup
 
 `wine sketchupmake-2017-2-2555-90782-en-x64.exe`
 
-## Alternatives
+At this point, I had __Sketchup__ show up in my Applications menu in Pop Shell and I was able to run it from there.
+
+&nbsp;
+&nbsp;
+
+## Sketchup Alternatives
 
 - [FreeCAD](https://www.freecadweb.org/) - Steep learning curve compared to Sketchup. Doesnt have that "you can just think in 3D" aspect to it like Sketchup does. Can deal with plans and more complex setups things much better however.
   
 - [BRL-CAD](https://brlcad.org/) - The ability to draw in 3D is quite similar in some ways to Sketchup.
-  
+
+&nbsp; 
 
 ## References:
 
