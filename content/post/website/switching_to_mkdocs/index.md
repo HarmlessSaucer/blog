@@ -45,3 +45,5 @@ Here are some resources I found useful in this process:
 - [Material for MkDocs by Squidfunk on GitHub](https://github.com/squidfunk/mkdocs-material)
 - ['Build a Blog With GitHub and MkDocs' by BetterProgramming.pub](https://betterprogramming.pub/build-a-blog-with-github-and-mkdocs-cf47914affa7)
 - ['Deploying mkdocs using DroneCI and Gitea' by Alex Kretzschmar](https://blog.ktz.me/deploying-mkdocs-using-droneci/)
+
+&nbsp;
