@@ -2,7 +2,8 @@
 author: "Graham Balharrie"
 title: "Owntone"
 description: "AirPlay as part of my home automation setup."
-date: 2021-11-29
+date: 2021-12-13
+# date: 2021-11-29
 draft: false
 image: "title.jpg"
 tags:
@@ -16,6 +17,8 @@ categories:
 [OwnTone](https://owntone.github.io/owntone-server/INSTALL.html) is the new name of **forked-daapd**.  I was previously using forked-daapd as a way to play music to my HomePods via automations in [Home-Assistant](https://home-assistant.io).
 
 Since then I've changed a lot in my HomeLab infrastructure and I never got round to rebuilding my forked-daapd setup.  I've since found out that the project has changed pretty significantly so I'm giving OwnTone a go!
+
+> __*NOTE*!__ : This post is a work-in-progress as I am currently changing my Owntone setup.  I have therefore removed some of the steps that failed in more recent versions for me and may revisit this again.
 
 ---
 
@@ -49,5 +52,3 @@ sudo apt-get install \
 ```
 git clone https://github.com/owntone/owntone-server.git
 ```
-
-- 
