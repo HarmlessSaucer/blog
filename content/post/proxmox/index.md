@@ -21,6 +21,10 @@ categories:
 # Updating Proxmox VE
 > NOTE:  At the time of writing I am using Proxmox VE 6.x  
 > These instructions may no longer apply to future versions of Proxmox!
+> Check the [Proxmox documentation](https://pve.proxmox.com/pve-docs/index.html) out before you try this!
+
+&nbsp;
+
 ## Overview
 
 
@@ -53,4 +57,4 @@ deb http://download.proxmox.com/debian buster pve-no-subscription
 `apt update`  
 `apt dist-upgrade`
 
-
+&nbsp;
