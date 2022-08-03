@@ -18,7 +18,7 @@ categories:
 
 I wanted a solution to play a sound through our HomePods when someone pressed the doorbell.  It seems that OwnTone and Home-Assistant might be able to do this - let's investigate!
 
----
+&nbsp;
 
 ## Investigation
 
@@ -60,6 +60,8 @@ Can we play that trackID directly?
 ```
 curl -X POST "http://192.168.1.19:3689/api/queue/items/add?uris=library:track:21&clear=true&playback=start"
 ```
+
+&nbsp;
 
 ## Playing through Home-Assistant
 
