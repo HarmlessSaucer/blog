@@ -3,7 +3,7 @@ author: "Graham Balharrie"
 title: "Target Display Mode on Linux"
 description: "Using my 2011 iMac as a monitor from Pop!_OS"
 date: 2022-08-30
-draft: true
+draft: false
 image: "title.jpg"
 tags:
 - linux
