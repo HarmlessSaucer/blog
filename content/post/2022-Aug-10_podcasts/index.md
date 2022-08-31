@@ -17,9 +17,17 @@ categories:
 
 ---
 
-## Overview
+## These are the tech podcasts I love!
+
+These are some of the tech Podcasts that I've found and really enjoyed listening to, especially over lockdown.  They cover a few (quite similar!) topics, but t
+
+### What do you love?
 
 If you have any recommendations for a great podcast you think I should check out, let me know on [Twitter](https://twitter.com/harmlesssaucer)!
+
+---
+
+&nbsp;
 
 ## Linux
 - Destination Linux Podcast
@@ -29,24 +37,36 @@ If you have any recommendations for a great podcast you think I should check out
 - Linux Downtime
 - Linux Unplugged
 
+&nbsp;
+
 ## Software Development
 - 2.5 Admins
 - Coder Radio
 
+&nbsp;
+
 ## Security
 - Darknet Diaries
+
+&nbsp;
 
 ## Chat Shows
 - Jupiter Extras
 - Office Hours
-- The ReadME Podcast
+- GitHub - The ReadME Podcast
+
+&nbsp;
 
 ## Workflow optimisation and automations
 - Automators
 
+&nbsp;
+
 ## Home Automation
 - Home Assistant Podcast
 - The Smart Home Collective
+
+&nbsp;
 
 ## Self-Hosting and Homelabs
 - Self-Hosted
