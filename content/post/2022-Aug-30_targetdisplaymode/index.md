@@ -21,6 +21,8 @@ categories:
 
 ## Overview
 
+![Click to see a GIF!](gif.gif)
+
 In building our shed/home office, I was looking for a both a Linux machine that I could keep down there as well as a display to use with my iPad Pro or work MacBook Pro.
 
 My Dad had an old (2011) 27" iMac laying around not doing much.  It's got an i5 CPU, 32GB RAM an SSD and a 2TB spinning rust drive inside.  The great thing about this machine is that it can do [Target Display Mode](https://support.apple.com/en-us/HT204592) via the included Mini Display Port.
