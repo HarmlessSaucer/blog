@@ -47,6 +47,8 @@ I then soldered some jumper wire into the __"PWR"__, __"GND"__ and __"IN"__ conn
 
 ![Cable management](02.jpg)
 
+![Diagram - Fritzing didn't have the components I wanted, so here's a rubbish version using LibreOffice Impress!](diagram.jpg)
+
 I then put a couple of blobs of super glue onto the bottom of the RGB ring, and put it on top of the original LED plate.  This probably isn't necessary as it will be "clamped" in somewhat once you screw the top on, but I thought it was worth it.
 
 ![Placement of the RGB LED ring](01.jpg)
