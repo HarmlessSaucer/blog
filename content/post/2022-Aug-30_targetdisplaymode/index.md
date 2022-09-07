@@ -39,6 +39,36 @@ So I set about trying to find a way to do this in [Pop!_OS](https://pop.system76
 
 ---
 
+
+## Target Display Mode
+
+
+[Target Display Mode](https://support.apple.com/en-us/HT204592) is only available on certain iMac models.  See the [Target Display Mode documentation](https://support.apple.com/en-us/HT204592) by Apple for more information on this.
+
+From that article:
+
+> **24-inch and 27-inch iMac models introduced in 2009 and 2010**:
+>
+> The cable connecting the two Mac computers must be a Mini DisplayPort cable.
+
+&nbsp;
+
+> **iMac models introduced in 2011, 2012, 2013, and mid 2014**:
+> 
+> The cable connecting the two Mac computers must be a Thunderbolt or Thunderbolt 2 cable.
+
+&nbsp;
+
+### Cable
+
+Since my iMac is a 2011 model, and the devices I will be connecting to it are USB-C equiped (My iPad Pro and MacBook Pro) I used a **Mini Display Port to USB-C cable**.
+
+For reference, I used [this one](https://www.amazon.co.uk/gp/product/B08QFT7B2N/) from Amazon and it worked great.
+
+&nbsp;
+
+---
+
 ## `smc_utils` and Target Display Mode in Linux
 
 Doing some research into if anyone had already done this, I found [this video](https://www.youtube.com/watch?v=hnRjJ6PVjic) from ["THE PHINTAGE COLLECTOR"](https://www.youtube.com/c/THEPHINTAGECOLLECTOR) who in the video talks you through setting up a version of ["Tiny Core Linux"](http://tinycorelinux.net/) to boot into a very minimal Linux distro just to use [Target Display Mode](https://support.apple.com/en-us/HT204592).
@@ -59,7 +89,7 @@ Therefore, I started looking into utilising the underlying project ([smc_util](h
 
     &nbsp;
 
-2. Copy the entire `smc_util` folder to `/usr/local/bin`:
+2. Copy the entire `smc_util` folder to `/usr/local/bin`
 
 &nbsp;
 
@@ -114,11 +144,11 @@ ALL ALL=(ALL:ALL) NOPASSWD: /usr/local/bin/smc_util/tdm_off.sh
 ALL ALL=(ALL:ALL) NOPASSWD: /usr/local/bin/smc_util/SmcDumpKey
 ```
 
-> **NOTE:** I chose to use `ALL` at the start of the above lines, as there will be multiple users running this script.  However, you should really think about whether this is needed - you could specify your own user (e.g. `graham`), or a group (e.g. `%admin`).
+> **NOTE:** I chose to use `ALL` at the start of the above lines, as there will be multiple users running this script.  However, you should **really** think about whether this is needed - you could specify your own user (e.g. `graham`), or a group (e.g. `%admin`).
 
 &nbsp;
 
-7. Add the custom keyboard shortcuts to execute the following commands:
+7. Add the custom keyboard shortcuts (check out the [Pop!_OS keyboard shortcuts guide](https://support.system76.com/articles/keyboard-shortcuts/)) to execute the following commands:
 
     ![Gnome Custom Shortcuts](custom_shortcuts.png)
 
@@ -135,6 +165,11 @@ ALL ALL=(ALL:ALL) NOPASSWD: /usr/local/bin/smc_util/SmcDumpKey
 
 ## References
 
+- [Apple - Target Display Mode Documentation](https://support.apple.com/en-us/HT204592).
 - [YouTube - Enabling Vintage iMac's Target Display Mode on Linux](https://www.youtube.com/watch?v=hnRjJ6PVjic)
+- [Tiny Core Linux](http://tinycorelinux.net/)
 - [GitHub - tinycore-targetdisplaymode](https://github.com/gpdm/tinycore-targetdisplaymode)
 - [GitHub - smc_util](https://github.com/floe/smc_util/)
+- [Amazon - Mini Display Port to USB-C cable I used](https://www.amazon.co.uk/gp/product/B08QFT7B2N/)
+- [Pop!_OS](https://pop.system76.com/)
+- [Pop!_OS - Modify Keyboard Shortcuts](https://support.system76.com/articles/keyboard-shortcuts/)
