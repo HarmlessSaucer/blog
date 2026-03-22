@@ -35,8 +35,10 @@ The following are the steps I used to set it up using Nix Shell.
 
 ## Allow unfree and insecure packages
 
-`export NIXPKGS_ALLOW_UNFREE=1`
-`export NIXPKGS_ALLOW_INSECURE=1`
+```
+export NIXPKGS_ALLOW_UNFREE=1
+export NIXPKGS_ALLOW_INSECURE=1
+```
 
 
 ## Run Ventoy using Nix Shell
