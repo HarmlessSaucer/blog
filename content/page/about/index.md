@@ -2,7 +2,7 @@
 title: About
 description: A bit about me.
 # date: '2022-05-06'
-# license: CC BY-NC-ND
+license: false
 # lastmod: '2022-05-06'
 menu:
     main: 
