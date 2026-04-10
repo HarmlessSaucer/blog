@@ -46,6 +46,6 @@
           };
 
           devShells.default =
-            pkgs.mkShell { buildInputs = [ pkgs.nixpkgs-fmt pkgs.hugo pkgs.nodePackages.prettier ]; };
+            pkgs.mkShell { buildInputs = [ pkgs.nixpkgs-fmt pkgs.hugo pkgs.nodePackages.prettier pkgs.just ]; };
         });
 }
