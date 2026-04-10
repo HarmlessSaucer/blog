@@ -2,7 +2,7 @@
   description = "Personal website and blog for Graham Balharrie";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     utils.url = "github:numtide/flake-utils";
     hugo-theme-stack = {
       url = "github:CaiJimmy/hugo-theme-stack";
@@ -28,25 +28,24 @@
           packages.website = pkgs.stdenv.mkDerivation {
             name = "website";
             src = self;
-            buildInputs = [ pkgs.git pkgs.nodePackages.prettier ];
+            nativeBuildInputs = [ pkgs.git pkgs.nodePackages.prettier ];
             buildPhase = ''
               mkdir -p themes
               ln -s ${inputs.hugo-theme-stack} themes/hugo-theme-stack
-              sed -i -e 's/enableGitInfo = true/enableGitInfo = false/' config.yaml
-              ${pkgs.hugo}/bin/hugo
+              ${pkgs.hugo}/bin/hugo --noGitInfo
               ${pkgs.nodePackages.prettier}/bin/prettier -w public '!**/*.{js,css}'
             '';
             installPhase = "cp -r public $out";
           };
 
-          defaultPackage = self.packages.${system}.website;
+          packages.default = self.packages.${system}.website;
 
           apps = rec {
             hugo = utils.lib.mkApp { drv = pkgs.hugo; };
             default = hugo;
           };
 
-          devShell =
-            pkgs.mkShell { buildInputs = [ pkgs.nixpkgs-fmt pkgs.hugo ]; };
+          devShells.default =
+            pkgs.mkShell { buildInputs = [ pkgs.nixpkgs-fmt pkgs.hugo pkgs.nodePackages.prettier ]; };
         });
 }
