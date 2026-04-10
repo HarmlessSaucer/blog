@@ -1,6 +1,6 @@
 baseurl: https://balharrie.uk
 languageCode: en-gb
-enableGitInfo: false
+enableGitInfo: true
 theme: hugo-theme-stack
 pagerSize: 5
 title: balharrie.uk
