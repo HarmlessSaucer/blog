@@ -29,8 +29,8 @@ You can read more about NixOS [on the website](https://nixos.org/).
 
 I tried to use NixOS in my homelab previously, creating a full blown NixOS VM and configuring it.  This worked but seemed a bit cumbersome and whilst it worked, I didn't see much advantage over the docker VM/CT images I had already created. 
 
-I came accross this blog post by Josh Lee about using the `nixos-generate` package to create a VM image:
-https://www.joshuamlee.com/nixos-proxmox-vm-images/
+I came accross [this blog post](https://www.joshuamlee.com/nixos-proxmox-vm-images/
+) by Josh Lee about using the `nixos-generate` package to create a VM image.
 
 This solution uses the `nixos-generate` command to create a whole VM image based on a Nix configuration file that can then be restored on to your Proxmox host.
 
