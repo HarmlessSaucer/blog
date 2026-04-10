@@ -3,7 +3,7 @@ author: "Graham Balharrie"
 title: "Joggler Home-Assistant Kiosk v2!"
 description: "Now with Debian!"
 date: 2022-08-12
-draft: true
+draft: false
 hideLastModified: true
 image: "title.jpg"
 tags:
