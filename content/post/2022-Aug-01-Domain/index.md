@@ -3,7 +3,7 @@ author: "Graham Balharrie"
 title: "Using my domain for self hosted services"
 description: "How I use Ngninx, AdGard and Let's Encrypt for everything I host."
 date: 2022-08-01
-draft: true
+draft: false
 # image: "title.jpg"
 tags:
 - network
@@ -18,6 +18,8 @@ categories:
 - self-hosted
 
 ---
+
+> **Note:** After publishing this post, I later realised that whilst using the "Filters" in AdGuard home worked, it was not the right solution and DNS rewrites was actually the better option - I used "Filters" as I intially ran into a bug with AdGuard Home that was later fixed.  Don't do as I did!
 
 ## Overview
 
