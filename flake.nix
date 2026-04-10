@@ -32,7 +32,7 @@
             buildPhase = ''
               mkdir -p themes
               ln -s ${inputs.hugo-theme-stack} themes/hugo-theme-stack
-              ${pkgs.hugo}/bin/hugo --noGitInfo
+              HUGO_ENABLEGITINFO=false ${pkgs.hugo}/bin/hugo
               ${pkgs.nodePackages.prettier}/bin/prettier -w public '!**/*.{js,css}'
             '';
             installPhase = "cp -r public $out";
