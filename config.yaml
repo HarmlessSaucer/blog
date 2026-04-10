@@ -1,5 +1,6 @@
 baseurl: https://balharrie.uk
 languageCode: en-gb
+enableGitInfo: false
 theme: hugo-theme-stack
 pagerSize: 5
 title: balharrie.uk
@@ -26,7 +27,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: /images/favicon.ico
     footer:
         since: 2020
         customText:
@@ -161,11 +162,11 @@ menu:
           url: https://github.com/harmlesssaucer
           params:
               icon: brand-github
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com/harmlesssaucer
+        - identifier: mastodon
+          name: Mastodon
+          url: https://fosstodon.org/@harmlesssaucer
           params:
-              icon: brand-twitter
+              icon: brand-mastodon
         # - identifier: instagram
         #   name: Instagram
         #   url: https://instagram.com/harmlesssaucer
