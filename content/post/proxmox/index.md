@@ -5,12 +5,7 @@ description: "My process for updating my Proxmox VE hosts."
 date: 2021-06-15
 draft: false
 image: "title.jpg"
-tags: ["home lab", "server", "virtualisation", "proxmox", "update"]
-tags:
-- vm
-- update
-- host
-- proxmox
+tags: ["home lab", "server", "virtualisation", "proxmox", "update", "vm", "host"]
 categories:
 - proxmox
 - self-hosted

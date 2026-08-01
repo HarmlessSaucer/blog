@@ -1,12 +1,12 @@
 baseurl: https://balharrie.uk
-languageCode: en-gb
+locale: en-gb
 enableGitInfo: true
 theme: hugo-theme-stack
 pagerSize: 5
 title: balharrie.uk
 languages:
     en:
-        languageName: English
+        label: English
         title: balharrie.uk
         weight: 1
 # Change it to your Disqus shortname before using
