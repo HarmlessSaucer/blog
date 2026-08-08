@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="search-page">
+  <header class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{- with .Content }}<div class="prose list-intro">{{ . }}</div>{{ end }}
+  </header>
+
+  <div class="search" data-search data-index-url="{{ with .OutputFormats.Get "json" }}{{ .RelPermalink }}{{ end }}">
+    <input type="search" class="search-input" placeholder="Search posts…" autocomplete="off" autofocus aria-label="Search posts">
+    <ul class="post-list search-results" data-search-results></ul>
+  </div>
+  <noscript><p class="muted">Search requires JavaScript.</p></noscript>
+</section>
+{{ end }}

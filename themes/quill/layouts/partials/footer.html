@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    {{- partial "social.html" . }}
+    <p class="footer-meta">
+      © {{ with site.Params.footer.since }}{{ . }}–{{ end }}{{ now.Format "2006" }} {{ site.Params.author | default "Graham Balharrie" }}.
+      {{ with site.Params.footer.customText }}{{ . }}{{ end }}
+    </p>
+  </div>
+</footer>

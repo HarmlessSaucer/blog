@@ -1,0 +1,5 @@
+{{- with resources.Get "js/theme.js" }}
+  {{- $js := . | js.Build (dict "minify" hugo.IsProduction) -}}
+  {{- if hugo.IsProduction }}{{ $js = $js | fingerprint }}{{ end -}}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+{{- end }}

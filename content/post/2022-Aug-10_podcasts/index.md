@@ -45,7 +45,7 @@ If you have any recommendations for a great podcast you think I should check out
 
 &nbsp;
 
-## Security
+## Security
 - Darknet Diaries
 
 &nbsp;
@@ -57,12 +57,12 @@ If you have any recommendations for a great podcast you think I should check out
 
 &nbsp;
 
-## Workflow optimisation and automations
+## Workflow optimisation and automations
 - Automators
 
 &nbsp;
 
-## Home Automation
+## Home Automation
 - Home Assistant Podcast
 - The Smart Home Collective
 

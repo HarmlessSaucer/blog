@@ -1,7 +1,7 @@
 baseurl: https://balharrie.uk
 locale: en-gb
 enableGitInfo: true
-theme: hugo-theme-stack
+theme: quill
 pagerSize: 5
 title: balharrie.uk
 languages:
@@ -28,6 +28,7 @@ params:
     featuredImageField: image
     rssFullContent: true
     favicon: /images/favicon.ico
+    logo: /images/avataaars_small.png
     footer:
         since: 2020
         customText:
@@ -182,8 +183,8 @@ markup:
             unsafe: false
     tableOfContents:
         endLevel: 4
-        ordered: true
-        startLevel: 2
+        ordered: false
+        startLevel: 1
     highlight:
         noClasses: false
         codeFences: true

@@ -1,0 +1,47 @@
+{{- $title := .Title -}}
+{{- $siteTitle := site.Title -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ $siteTitle }}{{ else }}{{ $title }} · {{ $siteTitle }}{{ end }}</title>
+{{- with (or .Description .Summary site.Params.description) }}
+<meta name="description" content="{{ . | plainify | truncate 160 }}">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* No-flash theme init: set data-theme before first paint */}}
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+
+{{/* Open Graph / Twitter */}}
+<meta property="og:site_name" content="{{ $siteTitle }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ $siteTitle }}{{ else }}{{ $title }}{{ end }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- with (or .Description .Summary) }}<meta property="og:description" content="{{ . | plainify | truncate 160 }}">{{ end }}
+{{- if .IsPage }}{{ with .Resources.GetMatch (.Params.image | default "") }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+
+{{- with site.Params.favicon }}
+<link rel="icon" href="{{ . | relURL }}" sizes="any">
+<link rel="shortcut icon" href="{{ . | relURL }}">
+{{- end }}
+{{- with (or site.Params.logo (and site.Params.sidebar.avatar site.Params.sidebar.avatar.src)) }}
+<link rel="apple-touch-icon" href="{{ . | relURL }}">
+{{- end }}
+
+{{/* Styles */}}
+{{- with resources.Get "css/main.css" }}
+  {{- if hugo.IsProduction -}}
+    {{- $css := . | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- else -}}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end -}}
+{{- end }}
+
+{{/* RSS autodiscovery */}}
+{{- range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $siteTitle }}">
+{{- end }}
+
+{{/* Analytics (site-level partial, e.g. GoatCounter) */}}
+{{- if templates.Exists "partials/analytics.html" }}{{ partial "analytics.html" . }}{{ end }}

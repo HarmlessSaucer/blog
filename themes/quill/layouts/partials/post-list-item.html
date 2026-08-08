@@ -1,0 +1,10 @@
+<li class="post-item{{ if .Resources.GetMatch (.Params.image | default "") }} has-thumb{{ end }}">
+  <a class="post-link" href="{{ .RelPermalink }}">
+    {{- with .Resources.GetMatch (.Params.image | default "") }}
+    <img class="post-thumb" src="{{ .RelPermalink }}" alt="" loading="lazy">
+    {{- end }}
+    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (site.Params.dateFormat.published | default "Jan 02, 2006") }}</time>
+    <span class="post-title">{{ .Title }}</span>
+  </a>
+  {{- with (or .Description .Summary) }}<p class="post-excerpt">{{ . | plainify | truncate 180 }}</p>{{ end }}
+</li>

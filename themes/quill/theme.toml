@@ -1,0 +1,8 @@
+name = "Quill"
+license = "MIT"
+description = "A minimal, typographic single-column theme for balharrie.uk"
+homepage = "https://balharrie.uk"
+min_version = "0.146.0"
+
+[author]
+  name = "Graham Balharrie"

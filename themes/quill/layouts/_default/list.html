@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="list-page">
+  <header class="list-header">
+    <h1 class="list-title">
+      {{- if eq .Kind "term" }}<span class="list-kind">{{ .Data.Singular | humanize }}:</span> {{ end }}{{ .Title }}
+    </h1>
+    {{- with .Content }}<div class="prose list-intro">{{ . }}</div>{{ end }}
+    {{- if eq .Kind "term" }}<p class="list-count">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }}</p>{{ end }}
+  </header>
+
+  {{ $paginator := .Paginate .Pages }}
+  <ul class="post-list">
+    {{- range $paginator.Pages }}
+    <li class="post-item">
+      <a class="post-link" href="{{ .RelPermalink }}">
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (site.Params.dateFormat.published | default "Jan 02, 2006") }}</time>
+        <span class="post-title">{{ .Title }}</span>
+      </a>
+      {{- with (or .Description .Summary) }}<p class="post-excerpt">{{ . | plainify | truncate 180 }}</p>{{ end }}
+    </li>
+    {{- end }}
+  </ul>
+
+  {{ partial "pagination.html" . }}
+</section>
+{{ end }}

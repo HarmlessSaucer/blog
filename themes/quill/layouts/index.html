@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="hero">
+  <h1 class="hero-title">{{ site.Title }}</h1>
+  {{- with site.Params.sidebar.subtitle }}<p class="hero-subtitle">{{ . }}</p>{{ end }}
+</section>
+
+{{/* Intro pulled from the About page (first couple of real paragraphs) */}}
+{{- with site.GetPage "/page/about" }}
+  {{- $paras := findRE `(?s)<p>.*?</p>` .Content }}
+  {{- $keep := slice }}
+  {{- range $paras }}
+    {{- if and (not (strings.Contains . "<img")) (gt (len (. | plainify | strings.TrimSpace)) 1) }}
+      {{- $keep = $keep | append . }}
+    {{- end }}
+  {{- end }}
+  {{- if $keep }}
+  <aside class="intro">
+    {{- $logo := or site.Params.logo (and site.Params.sidebar.avatar site.Params.sidebar.avatar.src) }}
+    {{- with $logo }}<img class="intro-avatar" src="{{ . | relURL }}" alt="Graham" width="64" height="64" loading="lazy">{{ end }}
+    <div class="intro-text">
+      {{- range first 2 $keep }}{{ . | safeHTML }}{{ end }}
+      <a class="intro-more" href="{{ .RelPermalink }}">More about me →</a>
+    </div>
+  </aside>
+  {{- end }}
+{{- end }}
+
+{{ $posts := where site.RegularPages "Type" "post" }}
+{{ $paginator := .Paginate $posts }}
+<ul class="post-list">
+  {{- range $paginator.Pages }}
+  {{ partial "post-list-item.html" . }}
+  {{- end }}
+</ul>
+
+{{ partial "pagination.html" . }}
+{{ end }}

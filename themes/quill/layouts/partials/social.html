@@ -1,0 +1,10 @@
+{{- with site.Menus.social }}
+<nav class="social" aria-label="Social">
+  {{- range . }}
+  <a href="{{ .URL }}" rel="me noopener" target="_blank" title="{{ .Name }}" aria-label="{{ .Name }}">
+    {{- $icon := printf "icons/%s.svg" (.Params.icon | default "link") -}}
+    {{- with resources.Get $icon }}{{ .Content | safeHTML }}{{ else }}<span>{{ .Name }}</span>{{ end -}}
+  </a>
+  {{- end }}
+</nav>
+{{- end }}

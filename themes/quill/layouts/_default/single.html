@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article class="post">
+  {{- if .IsPage }}{{ with .Resources.GetMatch (.Params.image | default "") }}
+  <figure class="post-cover"><img src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy"></figure>
+  {{- end }}{{ end }}
+
+  <header class="post-header">
+    <h1 class="post-heading">{{ .Title }}</h1>
+    {{- if and .IsPage (eq .Type "post") }}
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (site.Params.dateFormat.published | default "Jan 02, 2006") }}</time>
+      {{- if site.Params.article.readingTime }}<span class="dot">·</span>{{ .ReadingTime }} min read{{ end }}
+      {{- with .GetTerms "categories" }}<span class="dot">·</span>{{ range . }}<a class="cat" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ end }}{{ end }}
+    </div>
+    {{- else }}{{ with .Description }}<p class="post-standfirst">{{ . }}</p>{{ end }}{{ end }}
+  </header>
+
+  {{- $showToc := and (default site.Params.article.toc .Params.toc) (ne .Params.toc false) (gt (len .TableOfContents) 100) }}
+  {{- if $showToc }}
+  <details class="toc" open>
+    <summary>Contents</summary>
+    {{ .TableOfContents }}
+  </details>
+  {{- end }}
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  {{- with .Params.links }}
+  <ul class="link-cards">
+    {{- range . }}
+    <li class="link-card">
+      <a href="{{ .website }}" rel="noopener" target="_blank">
+        {{- with .image }}<img class="link-img" src="{{ . }}" alt="" loading="lazy">{{ end }}
+        <span class="link-body">
+          <span class="link-title">{{ .title }}</span>
+          {{- with .description }}<span class="link-desc">{{ . }}</span>{{ end }}
+        </span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
+
+  <footer class="post-footer">
+    {{- with .GetTerms "tags" }}
+    <ul class="tags">
+      {{- range . }}<li><a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a></li>{{ end }}
+    </ul>
+    {{- end }}
+    {{- if and (eq .Type "post") (ne .Params.license false) }}
+    <p class="license">{{ site.Params.article.license.default | default "Licensed under CC BY-NC-SA 4.0" }}</p>
+    {{- end }}
+  </footer>
+</article>
+{{ end }}
