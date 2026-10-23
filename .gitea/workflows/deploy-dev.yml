@@ -1,0 +1,19 @@
+name: Deploy (dev)
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy dev to VM
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DOCKER_VM_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=no \
+            root@192.168.1.7 \
+            "[ -d /opt/blog-dev/.git ] || git clone https://git.balharrie.uk/graham/blog.git /opt/blog-dev; cd /opt/blog-dev && git fetch origin && git checkout -B dev origin/dev && docker network prune -f && BLOG_PORT=4246 docker compose -p blog-dev up -d --build"
